@@ -85,7 +85,7 @@ export const Registration = () => {
                    <Avatar sx={{ width: 100, height: 100 }} />
                </div>
            </Button>}
-           {!!avatar && <img src={`http://localhost:5000${avatar}`} alt="#"/> }
+           {!!avatar && <img src={process.env.REACT_APP_API_URL + avatar} alt="#"/> }
            <input ref={inputFileRef} type="file" onChange={handleChangeFile} hidden />
            {!!avatar && <Button className={styles.buttonDelete} variant="contained" onClick={onClickRemoveImage}>
                Удалить аватар

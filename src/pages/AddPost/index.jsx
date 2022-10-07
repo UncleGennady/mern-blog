@@ -121,7 +121,7 @@ useEffect(()=>{
               Удалить
             </Button>
           {imageUrl && (
-              <img className={styles.image} src={`http://localhost:5000${imageUrl}`} alt="Uploaded" />
+              <img className={styles.image} src={process.env.REACT_APP_API_URL + imageUrl} alt="Uploaded" />
               )}
           </>
       )}

@@ -15,7 +15,7 @@ export const Index = (props) => {
       <div className={styles.root}>
         <Avatar
           classes={{ root: styles.avatar }}
-          src={props.avatar ? `http://localhost:5000${props.avatar}` : '/noavatar.png' }
+          src={props.avatar ? process.env.REACT_APP_API_URL + props.avatar : '/noavatar.png' }
         />
         <div className={styles.form}>
           <TextField
