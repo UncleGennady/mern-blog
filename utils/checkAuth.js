@@ -12,7 +12,7 @@ export default (req, res, next) =>{
         req.userId = decoded._id
     }
     catch(e){
-        res.status(403).json({message:"Нет доступа!"})
+        return res.status(403).json({message:"Нет доступа!"})
     }
 
     next();
