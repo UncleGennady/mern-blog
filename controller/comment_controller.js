@@ -80,6 +80,20 @@ class CommentController {
         }
     };
 
+    deletePostComments = (id) =>{
+        try{
+            CommentModel.deleteMany({postId: id})
+            return({
+                success: true
+            })
+        }catch (e){
+            return({
+                success: false,
+                error: e
+            })
+        }
+    };
+
 
 }
 
