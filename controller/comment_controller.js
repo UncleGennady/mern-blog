@@ -80,9 +80,9 @@ class CommentController {
         }
     };
 
-    deletePostComments = (id) =>{
+    deletePostComments = async(id) =>{
         try{
-            CommentModel.deleteMany({postId: id})
+           await CommentModel.deleteMany({postId: id})
             return({
                 success: true
             })

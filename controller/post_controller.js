@@ -106,12 +106,13 @@ class PostController{
                     if(!doc){
                         return res.status(404).json({message:"Статья не найдена"})
                     }
-                    const commentsRemoved =  commentController.deletePostComments(postId);
-                    if(!commentsRemoved.success){
-                        console.log(commentsRemoved.error)
-                        return res.status(500).json({message:"Не удалось удалить комментарии статьи"})
-
-                    }
+                    commentController.deletePostComments(postId)
+                        .then(response =>{
+                            if(!response.success){
+                                console.log(response.error)
+                                return res.status(500).json({message:"Не удалось удалить комментарии статьи"})
+                            }
+                        })
                     res.json({success: true})
                 }
             )
